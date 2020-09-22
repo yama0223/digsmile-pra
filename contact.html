@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-head">
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="img/header-logo@2x.png" alt="DIGSMILE INC.">
+                </a>
+            </div>
+            <div class="nav-drawer">
+                <input class="nav-drawer__checkbox" id="drawer-checkbox" type="checkbox" >
+                <!-- ドロワーアイコン -->
+                <label class="nav-drawer__icon" for="drawer-checkbox">
+                    <span class="nav-drawer__icon--parts"></span>
+                </label>
+                <!-- 背景を暗く -->
+                <label class="nav-drawer__overlay" for="drawer-checkbox"></label>
+                <!-- ドロワーメニュー -->
+                <nav class="nav-drawer__menu">
+                    <ul class="nav-drawer__list">
+                    <li class="nav-drawer__item">
+                        <a class="nav-drawer__item--link" href="index.html">
+                            <img src="img/logo-icon@2x.png" alt="DIGSMILE">
+                        </a>
+                    </li>
+                    </li>
+                    <li class="nav-drawer__item">
+                        <a class="nav-drawer__item--link" href="#">CONTACT</a>
+                    </li>
+                    </ul>
+                </nav><!-- /ドロワーメニュー -->
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="ctaMv js-mv">
+            <div class="ctaMv-inner js-mv-inner">
+                <div class="ctaMv-inner--shadow">
+                    <div class="ctaMv-ttl">
+                        <h1 class="ctaMv-ttl__main">CONTACT</h1>
+                        <p class="ctaMv-ttl__sub">お問い合わせ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ctaDetail">
+            <p class="ctaDetail-note">ご依頼やご相談についてのご質問やご要望がございましたら、下記フォームよりお気軽にお問い合わせください。送付いただいた内容を確認の上、担当者からご連絡させていただきます。</p>
+            <form class="ctaDetail-form" action="confirm.php" method="POST">
+                <div class="ctaDetail-form__item">
+                    <div class="ctaDetail-form__txt ctaDetail-form__txt--radio">
+                        <p class="ctaDetail-type__ttl">お問い合わせ種別</p>
+                        <p class="must">必須</p>
+                    </div>
+                    <div class="ctaDetail-form__radio">
+                        <div class="ctaDetail-form__radio--item">
+                            <input class="ctaDetail-form__radio--btn" id="request" type="radio" name="type" checked>
+                            <label class="ctaDetail-form__radio--ttl" for="request">制作依頼</label>
+                        </div>
+                        <div class="ctaDetail-form__radio--item">
+                            <input class="ctaDetail-form__radio--btn" id="recruit" type="radio" name="type">
+                            <label class="ctaDetail-form__radio--ttl" for="recruit">採用</label>
+                        </div>
+                        <div class="ctaDetail-form__radio--item">
+                            <input class="ctaDetail-form__radio--btn" id="ir" type="radio" name="type">
+                            <label class="ctaDetail-form__radio--ttl" for="ir">IR</label>
+                        </div>
+                        <div class="ctaDetail-form__radio--item">
+                            <input class="ctaDetail-form__radio--btn" id="other" type="radio" name="type">
+                            <label class="ctaDetail-form__radio--ttl" for="other">その他</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="ctaDetail-form__item ctaDetail-companyName">
+                    <label for="companyName" class="ctaDetail-form__txt">会社名・団体名</label>
+                    <input class="ctaDetail-form__box" type="text" id="companyName" name="companyName">
+                </div>
+                <div class="ctaDetail-form__item">
+                    <div class="ctaDetail-form__txt">
+                        <label for="name">お名前</label>
+                        <p class="must">必須</p>
+                    </div>
+                    <input class="ctaDetail-form__box" type="text" id="name" name="name">
+                </div>
+                <div class="ctaDetail-form__item">
+                    <div class="ctaDetail-form__txt">
+                        <label for="email">メールアドレス</label>
+                        <p class="must">必須</p>
+                    </div>
+                    <input class="ctaDetail-form__box" type="email" id="email" name="email">
+                </div>
+                <div class="ctaDetail-form__item">
+                    <label for="tel" class="ctaDetail-form__txt">電話番号</label>
+                    <input class="ctaDetail-form__box" type="tel" id="tel" name="tel">
+                </div>
+                <div class="ctaDetail-form__item">
+                    <div class="ctaDetail-form__txt">
+                        <label for="cont">お問い合わせ内容</label>
+                        <p class="must">必須</p>
+                    </div>
+                    <textarea class="ctaDetail-form__box ctaDetail-form__box--lg" name="cont" id="cont" cols="30" rows="10"></textarea>
+                </div>
+                <div class="ctaDetail-policy">
+                    <p class="ctaDetail-policy__ttl">PRIVACY POLICY</p>
+                    <div class="ctaDetail-policy__cont">
+                        <p class="ctaDetail-policy__txt">個人情報保護方針<br>
+                        株式会社DIGSMILE（以下、当社）では、個人情報の重要性を認識し、以下の基準に従って、適切な管理、保護に努めます。<br><br>
+
+                        1.個人情報の収集、利用<br>
+                        当社では、お客様との取引、サービスの提供のために個人情報を適法に収集し、収集した目的の範囲内で、個人情報を利用いたします。<br><br>
+
+                        2.個人情報の第三者への開示と提供<br>
+                        収集したお客様の個人情報は、法的な要請等によらない限り、お客様の承諾を得ない第三者に対して提供・開示はいたしません。<br>
+                        業務の都合上、業務委託先に個人情報を提供する場合は、機密保持契約等によって業務委託先に個人情報保護を義務付けるとともに、業務委託先が適切に個人情報を取り扱うように管理いたします。<br><br>
+
+                        3.個人情報の保護<br>
+                        当社では、個人情報の紛失、破壊、改ざん、不正アクセス、および漏えい等を防止するため、適切な対策を行います。<br><br>
+
+                        4.法令および関連規範の遵守<br>
+                        当社は、個人情報の取り扱いに関して、個人情報保護法をはじめとする個人情報に関する法令および関連する規範を遵守します。<br><br>
+
+                        5.個人情報の開示・訂正・削除<br>
+                        当社では、個人情報の開示・訂正・削除等の依頼があった場合、情報提供者本人であることを確認の上、すみやかに対応いたします。<br><br>
+
+                        法令や当社方針により、プライバシー・ポリシーを予告なく改訂することがあります。<br><br>
+
+                        お問い合わせ窓口<br>
+                        当社の個人情報の取扱いに関するお問い合わせは下記までご連絡お願いいたします。<br>
+                        株式会社ファイアープレイス<br>
+                        044-589-4333</p>
+                    </div>
+                </div>
+                <div class="ctaDetail-checkBox">
+                    <input type="checkbox" id="check">
+                    <label class="checkbox" for="check">個人情報の取り扱いについて同意のうえ送信します。</label>
+                </div>
+                <input class="submit-btn" value="送信する" type="submit" id="js-submit" disabled></input>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-inner">
+            <p class="copy">&copy2018 DIGSMILE INC.</p>
+        </div>
+    </footer>
+
+    <!-- js読み込み -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    
+</body>
+</html>

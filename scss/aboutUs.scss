@@ -1,0 +1,195 @@
+@import "common";
+
+// aboutUs-mv
+
+.aboutUsMv{
+    height: 50vh;
+    background: linear-gradient(90deg,#fff 0%,#fff 54%,#000 54%,#000 100%);
+    margin-bottom: 120px;
+
+    &-inner{
+        width: 76.4%;
+        height: 86.5%;
+        background-image: url("../img/aboutus-head@2x.png");
+        background-size: cover;
+        background-position: center 0;
+        position: relative;
+
+        &--shadow{
+            position: absolute;
+            background-color: rgba(0,0,0,.34);
+            content: "";
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    &-ttl{
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(35%,-50%);
+
+        @include mq(){
+            transform: translate(25%,-50%);
+        }
+      
+        &__main{
+            font-size: 72px;
+            line-height: 84px;
+            font-weight: bold;
+            letter-spacing: 0.04em;
+
+            @include mq(){
+                font-size: 46px;
+                letter-spacing: 0;
+            }
+            @include mq(sm){
+                font-size: 40px;
+                
+            }
+        }
+        &__sub{
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 10px;
+            font-weight: bold;
+
+            @include mq(){
+                font-size: 16px;
+            }
+        }      
+    }
+}
+
+// vision
+
+.vision{
+
+    &-inner{
+        width: 415px;
+        margin-bottom: 120px;
+        margin-right: auto;
+        margin-left: auto;
+
+        @include mq(){
+            width: 100%;
+        }
+    }
+    &-ttl__main{
+        margin-bottom: 30px;
+
+        @include mq(){
+            margin-bottom: 40px;
+        }
+    }
+    &-ttl__sub{
+        margin-bottom: 30px;
+        font-size: 24px;
+        font-weight: bold;
+
+        @include mq(){
+            font-size: 20px;
+        }
+    }
+    &-txt{
+        line-height: 2;
+        margin-bottom: 30px;
+    }
+}
+
+// ceoMessage
+
+.ceoMessage{
+    margin-bottom: 120px;
+
+    &-img{
+        width: 40%;
+        transform: translateY(30%);
+
+        @include mq(){
+            width: 90%;
+        }
+    }  
+    &-bg{
+        width: 70%;
+        background-color: #F0F0F0;
+        margin-right: 0;
+        margin-left: auto;
+        padding-top: 120px;
+        padding-bottom: 90px;
+
+        @include mq(){
+            width: 100%;
+            padding-top: 140px;
+        }
+    }
+    &-inner{
+        max-width: 400px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    &-ttl{
+        margin-bottom: 30px;
+    }
+    &-txt{
+        line-height: 2;
+        margin-bottom: 30px;
+    }
+}
+
+// company
+
+.company{
+    margin-bottom: 120px;
+
+    &-ttl{
+        padding-bottom: 30px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #DDDDDD;
+    }
+    &-desc{
+        width: 70%;
+        margin-left: auto;
+        margin-bottom: 40px;
+
+        @include mq(){
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+    &-about{
+        display: flex;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #DDDDDD;
+        text-align: left;
+
+        &__ttl{
+            width: 150px;
+
+            @include mq(sm){
+                width: 120px;
+            }
+        }
+    }
+    &-map{
+        width: 100%;
+        height: 0;
+        padding-top: 32.7%;
+        position: relative;
+
+        iframe{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+    }
+}

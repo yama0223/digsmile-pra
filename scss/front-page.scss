@@ -1,0 +1,245 @@
+@import "common";
+
+// mv
+.mv{
+    height: 100vh;
+    background: linear-gradient(90deg,#fff 0%,#fff 54%,#000 54%,#000 100%);
+    margin-bottom: 120px;
+    
+    &-inner{
+        width: 76.4%;
+        height: 86.5%;
+        background-image: url("../img/mv@2x.png");
+        background-size: cover;
+        background-position: center 0;
+        position: relative;
+
+        &--shadow{
+            position: absolute;
+            background-color: rgba(0,0,0,.34);
+            content: "";
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    &-ttl{
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(50%,-50%);
+
+        @include mq(){
+            transform: translate(25%,-50%);
+        }
+
+        &__sub{
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            
+            @include mq(){
+                font-size: 16px;
+                letter-spacing: 0.04em;
+            }
+        }
+        
+      
+        &__main{
+            font-size: 72px;
+            line-height: 84px;
+            font-weight: bold;
+
+            @include mq(){
+                font-size: 56px;
+                line-height: 53px;
+                letter-spacing: 0.04em;
+            }
+        }
+    }
+}
+
+
+// aboutUs
+.aboutUs{
+    margin-bottom: 80px;
+    
+    .container{
+        background-image: url("../img/aboutus@2x.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 110px 0;
+        background-position: center;
+        position: relative;
+    }
+    
+    &-inner{
+        max-width: 590px;
+        background-color: rgba(255,255,255,.95);
+        padding: 50px 30px;
+        box-sizing: border-box;
+        margin-left: 50px;
+        margin-right: 50px;
+
+        @include mq(){
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    }
+
+    &-ttl{
+        margin-bottom: 30px;
+    }
+
+    &-desc{
+        line-height: 2;
+        margin-bottom: 30px;
+    }
+}
+
+// cont
+
+.cont{
+    position: relative;
+
+    &::after{
+        content: "";
+        width: 100vw;
+        height: 130%;
+        display: block;
+        background-color: #F0F0F0;
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+    }
+    .container{
+        display: flex;
+        justify-content: space-between;
+
+        @include mq(){
+            flex-direction: column;
+        }
+    }
+}
+
+// works
+
+.works{
+    margin-bottom: 60px;
+    margin-right: 60px;
+
+    @include mq(){
+        margin-right: 0;
+    }
+    &-ttl{
+        margin-bottom: 30px;
+    }
+    &-img{
+        margin-bottom: 30px;
+        width: 100%;
+        max-width: 520px;
+    }
+    &-txt{
+        margin-bottom: 43px;
+    }
+}
+
+// culture
+
+.culture{
+    margin-bottom: 60px;
+
+    &-ttl{
+        margin-bottom: 30px;
+    }
+    &-img{
+        margin-bottom: 30px;
+        width: 100%;
+        max-width: 520px;
+    }
+    &-txt{
+        margin-bottom: 43px;
+    }
+}
+
+// topics
+
+.topics{
+    .container{
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+    &-ttl{
+        margin-bottom: 32px;
+    }
+    &-cont{
+        max-width: 700px;
+        margin-left: auto;
+
+        &__article{
+            margin-bottom: 32px;
+        }
+        &__date{
+            color: #cecece;
+            font-size: 10px;
+            margin-bottom: 13px;
+        }
+        &__ttl{
+            padding-bottom: 12px;
+            border-bottom: 1px solid #DDDDDD;
+            line-height: 20px;
+        }
+    }
+    &-btn{
+        text-align: right;
+
+        @include mq(){
+            text-align: left;
+        }
+    }
+}
+
+// cta
+
+.cta{
+    background-color: #F2F2F2;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    &-inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include mq(){
+            flex-direction: column-reverse;
+            align-items: start;
+        }
+    }
+    &-desc{
+        width: 40%;
+
+        @include mq(){
+            width: 100%;
+            max-width: 520px;
+        }
+    }
+    &-ttl{
+        margin-bottom: 30px;
+    }
+    &-txt{
+        line-height: 2;
+        margin-bottom: 43px;
+    }
+    &-img{
+        width: 52.7%;
+
+        @include mq(){
+            margin-bottom: 30px;
+            max-width: 520px;
+            width: 100%;
+        }
+    }
+}

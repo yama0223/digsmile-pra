@@ -1,0 +1,194 @@
+@import "common";
+
+.ctaMv{
+    height: 50vh;
+    background: linear-gradient(90deg,#fff 0%,#fff 54%,#000 54%,#000 100%);
+    margin-bottom: 120px;
+
+    &-inner{
+        width: 76.4%;
+        height: 86.5%;
+        background-image: url("../img/contact-head@2x.png");
+        background-size: cover;
+        background-position: center 0;
+        position: relative;
+
+        &--shadow{
+            position: absolute;
+            background-color: rgba(0,0,0,.34);
+            content: "";
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    &-ttl{
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(45%,-50%);
+
+        @include mq(){
+            transform: translate(20%,-50%);
+        }
+      
+        &__main{
+            font-size: 72px;
+            line-height: 84px;
+            font-weight: bold;
+            letter-spacing: 0.04em;
+
+            @include mq(){
+                font-size: 52px;
+            }
+            @include mq(sm){
+                font-size: 46px;
+            }
+        }
+        &__sub{
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 10px;
+            font-weight: bold;
+
+            @include mq(){
+                font-size: 16px;
+            }
+        }      
+    }
+}
+
+// ctaDetail
+input,textarea{
+    resize: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+label,input[type="checkbox"]{
+    cursor: pointer;
+}
+
+.ctaDetail{
+    max-width: 700px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 120px;
+
+    &-note{
+        margin-bottom: 55px;
+        line-height: 24px;
+    }
+    &-form{
+        &__item{
+            margin-bottom: 45px;
+
+        }
+        &__radio{
+            display: flex;
+
+            @include mq(){
+                flex-direction: column;
+            }
+            &--item{
+                margin-bottom: 15px;
+
+                &:last-of-type{
+                    margin-bottom: 0;
+                }
+            }
+            &--btn{
+                width: 20px;
+                height: 20px;
+                border: 1px solid #000;
+                border-radius: 50%;
+
+                &:checked{
+                    background-color: #000;
+                    border: 4px solid #fff;
+                    box-shadow: 0 0 0 1px #000;
+                }
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            &--ttl{
+                margin-right: 50px;
+                margin-left: 10px;
+                vertical-align: -2px;
+            }
+        }
+        &__txt{
+            display: flex;
+            margin-bottom: 10px;
+            align-items: center;
+            
+            &--radio{
+                margin-bottom: 20px;
+            }
+        }
+        &__box{
+            font-size: 16px;
+            width: 100%;
+            height: 40px;
+            border: 1px solid #000;
+            padding: 10px;
+            box-sizing: border-box;
+
+            &--lg{
+                height: 200px;
+            }
+        }
+    }
+    &-policy{
+        margin-bottom: 40px;
+        line-height: 24px;
+        
+        
+        &__ttl{
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        &__cont{
+            padding: 10px 10px 0 10px;
+            overflow: auto;
+            border: 1px solid #333;
+            height: 252px;
+        }
+        &-txt{
+            line-height: 1.5;
+        }
+    }
+    &-checkBox{
+        margin-bottom: 40px;
+        text-align: center;
+    }
+}
+
+.must{
+    color: #fff;
+    background-color: #000;
+    display: inline-block;
+    padding: 4px 5px;
+    margin-left: 10px;
+}
+.submit-btn{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 14px;
+    color: #fff;
+    background-color: #000;
+    padding: 10px 66px;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    
+    &:hover{
+        opacity: .7;
+        transition: .3s;
+    }
+}
