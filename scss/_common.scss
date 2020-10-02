@@ -1,0 +1,327 @@
+$screen-sm: 413px;
+$screen-md: 767px;
+$screen-lg: 1024px;
+$bp-list:(
+    sm: (max-width:413px),
+    md: (max-width:767px),
+    lg: (max-width:1024px)
+)!default;
+
+@mixin mq($bp-key: md){
+    @media #{map-get($bp-list,$bp-key)}{
+        @content;
+    }
+}
+
+// 共通
+body{
+    font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+}
+
+.container{
+    padding: 0 30px;
+    max-width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include mq(){
+      padding: 0 15px;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+img{
+    width: 100%;
+}
+
+.section-ttl{
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+
+    @include mq(){
+      font-size: 28px;
+    }
+}
+
+.more-btn{
+    color: #fff;
+    background-color: #000;
+    width: 160px;
+    padding: 13px 44px;
+    font-weight: bold;
+    font-size: 12px;
+
+    &:hover{
+      opacity: .7;
+      transition: .3s;
+  }
+}
+
+// header
+.header{
+    &-head{
+        display: flex;
+        justify-content: space-between;
+        width: 92%;
+        margin-right: auto;
+        margin-left: auto;
+        z-index: 1;
+        position: fixed
+      }
+    &-logo{
+      color: #000;
+      width: 260px;
+      margin-top: 16px;
+      margin-left: 4vw;
+
+      &:hover{
+        opacity: .7;
+        transition: .3s;
+    }
+      
+      @include mq(){
+        width: 189px;
+      }
+      
+      &.black{
+        filter: brightness(0);
+        transition: filter .3s;
+      }
+    }
+}
+
+// ハンバーガーメニュー
+.nav-drawer {
+    position: relative;
+    display: block;
+
+    
+    
+    // inputのcheckboxは非表示
+    &__checkbox{
+      display: none;
+    }
+    // ハンバーガーアイコン
+    &__icon{
+      cursor: pointer;
+      display: block;
+      width: 36px;
+      height: 40px;
+      position: fixed;
+      right: 4vw;
+      top: 16px;
+
+      &:hover{
+        opacity: .7;
+        transition: .3s;
+    }
+
+      @include mq(){
+        top: 8px;
+      }
+
+      
+      // ハンバーガーアイコンの中の線
+      &--parts,
+      &--parts:before,
+      &--parts:after{
+        background-color: #fff;   
+        display: block;
+        width: 32px;
+        height: 3px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+      }
+
+      &--parts:before,
+      &--parts:after{
+        content: " ";
+      }
+      &--parts:before{
+        top: 20px
+      }
+      &--parts:after{
+        top: -20px
+      }
+
+
+      // ハンバーガーアイコンの中の線　黒バージョン
+      &--parts--black,
+      &--parts--black:before,
+      &--parts--black:after{
+        background-color: #000;   
+        display: block;
+        width: 32px;
+        height: 3px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+      }
+
+      &--parts--black:before,
+      &--parts--black:after{
+        content: " ";
+      }
+      &--parts--black:before{
+        top: 20px
+      }
+      &--parts--black:after{
+        top: -20px
+      }
+    }
+    
+
+
+
+    // ドロワーメニュー開いた時のメインエリアを暗く
+    &__overlay{
+      background: rgba(0,0,0,.85);
+      opacity: 0;
+      pointer-events: none; //ポインタの動作全部無効化
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      right: 0;
+    }
+    
+    // ドロワーメニュー
+    &__menu{
+      background: #000;
+      color: #fff;
+      width: 35vw;
+      height: 100%;
+      overflow-y: auto; //スクロール
+      -webkit-overflow-scrolling: touch; //スクロール（SP）
+      position: fixed;
+      right: -100%;
+      padding-top: 120px;
+
+      @include mq(){
+        width: 67.7vw;
+      }
+      @include mq(sm){
+        padding-top: 80px;
+      }
+    }
+    // z-indexの指定（1がメインエリア）
+    &__icon,&__txt{
+      z-index: 4;
+    }
+    &__menu{
+      z-index: 3;
+    }
+    &__overlay{
+      z-index: 2;
+    }
+    
+    // チェックが入ったら（アイコンクリックしたら）
+    &__checkbox:checked ~ {
+      // ハンバーガーアイコン
+      .nav-drawer__icon{
+        .nav-drawer__icon--parts{
+          background: transparent;
+        }
+        .nav-drawer__icon--parts:before{
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          top: 0;
+        }
+        .nav-drawer__icon--parts:after{
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+          top: 0;
+        }
+      }
+      // チェックが入ったら（アイコンをクリックしたら）　黒バージョン
+      .nav-drawer__icon{
+        .nav-drawer__icon--parts--black{
+          background: transparent;
+        }
+        .nav-drawer__icon--parts--black:before{
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          top: 0;
+          background-color: #fff;
+        }
+        .nav-drawer__icon--parts--black:after{
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+          top: 0;
+          background-color: #fff;
+        }
+      }
+      // メインエリアを暗くする
+      .nav-drawer__overlay {
+        opacity: 0.3;
+        pointer-events: auto; //ポインタの動作デフォルトに戻す
+      }
+      // メニューをだす
+      .nav-drawer__menu {
+        right: 0;
+      }
+    }
+    // 動きをスムーズに
+    &__icon--parts,
+    &__icon--parts:after,
+    &__icon--parts:before,
+    &__overlay,
+    &__menu{
+      -webkit-transition: all .7s ;
+      transition: all .7s ;
+    }
+    // 動きをスムーズに　黒バージョン
+    &__icon--parts--black,
+    &__icon--parts--black:after,
+    &__icon--parts--black:before{
+      -webkit-transition: all .7s ;
+      transition: all .7s ;
+    }
+    &__txt{
+        color: #fff;
+    }
+
+    &__list{
+        text-align: center;
+    }
+
+    &__item{
+        margin-bottom: 30px;
+        
+        &--link{
+        color: #fff;
+        font-weight: bold;
+
+        img{
+            width: 45px;
+        }
+        }
+    }
+}
+
+
+
+// footer
+.footer{
+    background-color: #525252;
+}
+.copy{
+    font-size: 10px;
+    color: #fff;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
